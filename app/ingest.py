@@ -1,5 +1,6 @@
 import os
 import re
+import json
 
 def split_by_functions(code):
     pattern = r"(def .*?:|class .*?:)"
@@ -25,12 +26,11 @@ def read_code_files(repo_path):
                     code = f.read()
 
                 parts = split_by_functions(code)
-
+                    
                 for p in parts:
                     chunks.append({
                         "text": p,
                         "file": path
                     })
 
-    print("Total chunks:", len(chunks))
     return chunks
