@@ -1,9 +1,8 @@
 from sentence_transformers import SentenceTransformer
-import chromadb
+from services.chroma_client import collection
 
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")
-chroma = chromadb.Client()
-collection = chroma.get_or_create_collection("codebase")
+
 
 def retrieve(query, k=5):
     emb = embed_model.encode([query]).tolist()
@@ -16,7 +15,6 @@ def retrieve(query, k=5):
     
     docs = results["documents"][0]
     metas = results["metadatas"][0]
-    
 
     docs = results["documents"][0]
     metas = results["metadatas"][0]

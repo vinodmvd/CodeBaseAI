@@ -1,9 +1,7 @@
 from sentence_transformers import SentenceTransformer
-import chromadb
+from services.chroma_client import collection
 
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")
-chroma = chromadb.Client()
-collection = chroma.get_or_create_collection("codebase")
 
 def embed_and_store(chunks):
     texts = [c["text"] for c in chunks]

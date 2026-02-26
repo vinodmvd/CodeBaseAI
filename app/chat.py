@@ -1,11 +1,5 @@
-import os
-
-from openai import OpenAI
-
+from services.openai_client import llm
 from app.retrieve import retrieve
-
-openai_api = os.getenv("open_api")
-llm = OpenAI(api_key = openai_api )
 
 def ask(question):
     context = retrieve(question)
