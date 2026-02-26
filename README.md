@@ -1,7 +1,6 @@
 # CodeBaseAI
 
 ---
-````markdown
 # AI Codebase Assistant (For Local Repository)
 
 It's an AI powered assistant that understands a local code repository and answers questions about code, functions, and logic using RAG.
