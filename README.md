@@ -53,7 +53,7 @@ python main.py
 ---
 
 # Architecture Overview
-
+![Architecture](assets/CodeBaseAI.png)
 
 ---
 
